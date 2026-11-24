@@ -1,0 +1,33 @@
+{
+  "aahext": 1,
+  "hubApi": 1,
+  "id": "com.jpmm.jpmm-nfse-nacional",
+  "name": "NFS-e Nacional",
+  "vendor": "Joao Milliet",
+  "version": "0.1.0",
+  "namespace": "jpmm-nfse-nacional",
+  "kind": "python",
+  "entry": "nfse_nacional",
+  "requires": {
+    "python": "3.9"
+  },
+  "access": {
+    "hosts": [
+      "sefin.nfse.gov.br",
+      "sefin.producaorestrita.nfse.gov.br",
+      "adn.nfse.gov.br",
+      "adn.producaorestrita.nfse.gov.br",
+      "secure.globalsign.com",
+      "brasilapi.com.br",
+      "publica.cnpj.ws"
+    ],
+    "files": "reads the company's A1 certificate file (.pfx) at the path set in its settings",
+    "macos": [],
+    "network": {
+      "internet": {
+        "send": {"tcp": [443, 80]}
+      }
+    }
+  },
+  "notes": "Issues, looks up, downloads (DANFSe PDF) and cancels the Brazilian national service invoice (NFS-e) through the federal Emissor Nacional API, signed with the company's ICP-Brasil A1 certificate. Every issue is a preview first and is sent only when confirmed. It needs the internet (HTTPS to the four nfse.gov.br hosts of the production and test environments) and reads the certificate file the user names."
+}
